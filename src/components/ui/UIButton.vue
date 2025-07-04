@@ -3,7 +3,7 @@ import { computed, withDefaults } from 'vue'
 
 type ButtonVariant = 'accent' | 'dark' | 'premium' | 'outlined'
 
-type ButtonSize = 'default' | 'sm' | 'lg' | 'icon'
+type ButtonSize = 'sm' | 'md' | 'lg' | 'icon' // 'lg' is default
 
 interface ButtonProps {
   as?: string | object
@@ -18,7 +18,7 @@ interface ButtonProps {
 const props = withDefaults(defineProps<ButtonProps>(), {
   as: 'button',
   variant: 'accent',
-  size: 'default',
+  size: 'lg',
   disabled: false,
   class: '',
 })
@@ -35,7 +35,14 @@ const buttonClasses = computed(() => [
 <template>
   <component :is="as" :class="buttonClasses" :disabled="disabled">
     <slot name="icon">
-      <component v-if="icon" :is="icon" />
+      <img
+        v-if="icon && typeof icon === 'string' && (icon.endsWith('.svg') || icon.startsWith('/'))"
+        :src="icon"
+        class="button-icon"
+        alt=""
+        aria-hidden="true"
+      />
+      <component v-else-if="icon" :is="icon" />
     </slot>
     <template v-if="size !== 'sm'">
       <span v-if="$slots.default">
@@ -76,11 +83,13 @@ const buttonClasses = computed(() => [
   font-weight: 600;
 }
 
-.button svg {
-  width: 1rem;
-  height: 1rem;
+.button svg,
+.button .button-icon {
+  width: 25px;
+  height: 25px;
   flex-shrink: 0;
   pointer-events: none;
+  object-fit: contain;
 }
 
 /* States */
@@ -128,24 +137,29 @@ const buttonClasses = computed(() => [
   width: 3rem;
   height: 3rem;
   padding: 0;
-  border-radius: 50%;
+}
+
+.button--md {
+  min-width: 170px;
+  height: auto;
 }
 
 .button--lg {
-  height: 2.75rem;
-  padding: 0 2rem;
+  min-width: 220px;
+  height: auto;
 }
 
 .button--icon {
-  min-width: auto;
-  width: 2.5rem;
-  height: 2.5rem;
+  min-width: 3rem;
+  width: 3rem;
+  height: 3rem;
   padding: 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .button {
+  .button--lg,
+  .button--md {
     min-width: 170px;
   }
 }
