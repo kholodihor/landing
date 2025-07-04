@@ -62,7 +62,7 @@ const buttonClasses = computed(() => [
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   min-width: 220px;
   padding: 0.7rem 2.8rem;
   font-size: 1rem;
@@ -112,6 +112,7 @@ const buttonClasses = computed(() => [
 .button--premium {
   background: linear-gradient(to bottom, #ffdfa2, #f9a80a, #ffb82e);
   color: #333;
+  border: 2px solid #a98618;
 }
 
 .button--outlined {

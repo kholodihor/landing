@@ -7,7 +7,7 @@ import UIButton from '@/components/ui/UIButton.vue'
     <h1>Here will be Landing Page soon...</h1>
     <div class="buttons">
       <UIButton size="sm" icon="/svg/swords.svg" />
-      <UIButton size="md" icon="/svg/swords.svg" variant="dark" text="Play" />
+      <UIButton size="md" icon="/svg/swords.svg" variant="premium" text="Play" />
     </div>
   </main>
 </template>
