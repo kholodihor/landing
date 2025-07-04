@@ -37,12 +37,14 @@ const buttonClasses = computed(() => [
     <slot name="icon">
       <component v-if="icon" :is="icon" />
     </slot>
-    <span v-if="$slots.default">
-      <slot />
-    </span>
-    <span v-else-if="text">
-      {{ text }}
-    </span>
+    <template v-if="size !== 'sm'">
+      <span v-if="$slots.default">
+        <slot />
+      </span>
+      <span v-else-if="text">
+        {{ text }}
+      </span>
+    </template>
   </component>
 </template>
 
