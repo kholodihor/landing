@@ -62,7 +62,7 @@ const buttonClasses = computed(() => [
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   min-width: 220px;
   padding: 0.7rem 2.8rem;
   font-size: 1rem;
