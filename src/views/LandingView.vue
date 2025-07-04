@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import Button from '@/components/ui/Button.vue'
+import UIButton from '@/components/ui/UIButton.vue'
 </script>
 
 <template>
   <main>
     <h1>Here will be Landing Page soon...</h1>
-    <Button variant="premium">Celebrate!!!</Button>
+    <div class="buttons">
+      <UIButton size="sm" icon="/svg/swords.svg" />
+      <UIButton size="md" icon="/svg/swords.svg" variant="dark" text="Play" />
+    </div>
   </main>
 </template>
 
@@ -19,6 +22,12 @@ main {
 
 h1 {
   margin-top: 2rem;
-  font-weight: 4A00;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 </style>
