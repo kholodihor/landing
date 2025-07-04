@@ -112,6 +112,7 @@ const buttonClasses = computed(() => [
 .button--premium {
   background: linear-gradient(to bottom, #ffdfa2, #f9a80a, #ffb82e);
   color: #333;
+  border: 2px solid #a98618;
 }
 
 .button--outlined {
