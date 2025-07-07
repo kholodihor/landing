@@ -63,7 +63,7 @@ const buttonClasses = computed(() => [
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-width: 220px;
+  width: 220px;
   padding: 0.7rem 2.8rem;
   font-size: 1rem;
   white-space: nowrap;
@@ -142,11 +142,6 @@ const buttonClasses = computed(() => [
 
 .button--md {
   min-width: 170px;
-  height: auto;
-}
-
-.button--lg {
-  min-width: 220px;
   height: auto;
 }
 

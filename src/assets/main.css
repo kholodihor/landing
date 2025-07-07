@@ -1,121 +1,23 @@
 @import './base.css';
 
-:root {
-  --container-max-width: 1200px;
-  --spacing-unit: 1rem;
-  --border-radius: 8px;
-  --transition-duration: 0.2s;
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 #app {
   width: 100%;
-  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-unit);
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-/* Typography */
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1.25rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  max-width: 65ch;
-}
-
-a {
-  color: var(--color-text);
-  text-decoration: none;
-  transition: color var(--transition-duration) ease;
-}
-
-a:hover {
-  color: var(--color-heading);
-  text-decoration: underline;
-}
-
-/* Layout Utilities */
-.container {
-  width: 100%;
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-unit);
-}
-
-.section {
-  padding: 4rem 0;
-}
-
-/* Buttons */
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: all var(--transition-duration) ease;
-  border: 2px solid transparent;
-  background-color: var(--color-heading);
-  color: var(--color-background);
-  text-decoration: none;
-}
-
-.button:hover {
-  background-color: transparent;
-  border-color: var(--color-heading);
-  color: var(--color-heading);
-  text-decoration: none;
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-  :root {
-    --spacing-unit: 2rem;
-  }
-  
-  h1 {
-    font-size: 3rem;
-  }
-  
-  .section {
-    padding: 6rem 0;
-  }
 }
