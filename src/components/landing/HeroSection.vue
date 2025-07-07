@@ -37,7 +37,7 @@ import UIButton from '@/components/ui/UIButton.vue'
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('/img/hero/hero_bg.png') no-repeat center center;
+  background: url('/img/hero/hero_bg.png') no-repeat center center, var(--vt-c-white);
   background-size: cover;
   padding: 2rem var(--container-padding-desktop);
 }
