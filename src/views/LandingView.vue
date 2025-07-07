@@ -15,6 +15,5 @@ main {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-unit);
-  background: pink;
 }
 </style>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AccentedText from '@/components/ui/AccentedText.vue'
 import UIButton from '@/components/ui/UIButton.vue'
+import HeroTestimonials from '@/components/landing/HeroTestimonials.vue'
 </script>
 
 <template>
@@ -26,6 +27,7 @@ import UIButton from '@/components/ui/UIButton.vue'
         <img src="/img/hero/hero_image.svg" alt="Chess player" />
       </div>
     </div>
+    <HeroTestimonials />
   </section>
 </template>
 
@@ -35,11 +37,11 @@ import UIButton from '@/components/ui/UIButton.vue'
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url('/img/hero/hero_bg.png') no-repeat center center, var(--vt-c-white);
+  background: url('/img/hero/hero_bg.png') no-repeat center center;
   background-size: cover;
-  padding: 2rem var(--container-padding-desktop);
 }
 
 .hero-content {
@@ -50,6 +52,7 @@ import UIButton from '@/components/ui/UIButton.vue'
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  padding: 2rem var(--container-padding-desktop);
 }
 
 .hero-text-description {
@@ -95,8 +98,8 @@ import UIButton from '@/components/ui/UIButton.vue'
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  min-width: 400px;
+  width: 50%;
+  /* min-width: 400px; */
 }
 
 .hero-image img {
@@ -106,16 +109,13 @@ import UIButton from '@/components/ui/UIButton.vue'
 }
 
 @media (max-width: 1024px) {
-  .hero {
-    padding-left: var(--container-padding-tablet);
-    padding-right: var(--container-padding-tablet);
-  }
-
   .hero-content {
     flex-direction: column;
     text-align: center;
     padding-top: 2rem;
     align-items: center;
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
   }
 
   .hero-text {
@@ -139,7 +139,7 @@ import UIButton from '@/components/ui/UIButton.vue'
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .hero-content {
     padding-left: var(--container-padding-mobile);
     padding-right: var(--container-padding-mobile);
   }
