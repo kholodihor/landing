@@ -1,11 +1,12 @@
 <script setup lang="ts">
 defineProps<{
   text: string
+  color?: string
 }>()
 </script>
 
 <template>
-  <span class="accented-text">
+  <span class="accented-text" :style="{ color: color || 'inherit' }">
     {{ text }}
     <img src="/svg/under_line.svg" alt="" class="underline" aria-hidden="true" />
   </span>
