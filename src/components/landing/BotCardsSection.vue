@@ -1,6 +1,6 @@
+<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Swiper as SwiperClass } from 'swiper/types'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
@@ -19,7 +19,7 @@ interface BotCard {
   isPremium?: boolean
 }
 
-const swiperInstance = ref<SwiperClass | null>(null)
+const swiperInstance = ref<any | null>(null)
 
 const handlePrev = () => {
   if (swiperInstance.value) {
@@ -33,7 +33,7 @@ const handleNext = () => {
   }
 }
 
-const onSwiper = (swiper: SwiperClass) => {
+const onSwiper = (swiper: any) => {
   swiperInstance.value = swiper
 }
 
