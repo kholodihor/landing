@@ -41,6 +41,7 @@
   --clr-linebg-main: #e5f5fe;
   --clr-linebg-alternative: #e8efe6;
   --clr-linebg-caution: #fcd7ca;
+  --clr-bg-lightblue: rgb(225, 248, 255);
 
   /* ========== Colors: UI Elements ========== */
   --clr-icons-drop-shadow: hsla(0, 0%, 25%, 0.5);
