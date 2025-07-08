@@ -1,10 +1,9 @@
 <!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
+import { SwiperSlide } from 'swiper/vue'
 import { Navigation } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/navigation'
+import BaseSwiper from '@/components/shared/BaseSwiper.vue'
 import UIButton from '@/components/ui/UIButton.vue'
 import AccentedText from '@/components/ui/AccentedText.vue'
 
@@ -17,24 +16,6 @@ interface BotCard {
   profession: string
   image: string
   isPremium?: boolean
-}
-
-const swiperInstance = ref<any | null>(null)
-
-const handlePrev = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slidePrev()
-  }
-}
-
-const handleNext = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slideNext()
-  }
-}
-
-const onSwiper = (swiper: any) => {
-  swiperInstance.value = swiper
 }
 
 const bots: BotCard[] = [
@@ -70,7 +51,7 @@ const bots: BotCard[] = [
     id: 4,
     name: 'Ethan Snide',
     rating: 783,
-    country: 'CD',
+    country: 'CA',
     age: 28,
     profession: 'Obnoxious kid',
     image: '/img/bots/bot4.png',
@@ -79,7 +60,7 @@ const bots: BotCard[] = [
     id: 5,
     name: 'Hana Biisho',
     rating: 1931,
-    country: 'FR',
+    country: 'CN',
     age: 36,
     profession: 'Journalist',
     image: '/img/bots/bot5.png',
@@ -96,6 +77,14 @@ const bots: BotCard[] = [
     isPremium: false,
   },
 ]
+
+// Reference to the Swiper instance for navigation controls
+const swiperInstance = ref<any | null>(null)
+
+// Get the Swiper instance when it's initialized
+const onSwiper = (swiper: any) => {
+  swiperInstance.value = swiper
+}
 </script>
 
 <template>
@@ -108,45 +97,47 @@ const bots: BotCard[] = [
       </h2>
 
       <div class="swiper-container">
-        <swiper
+        <BaseSwiper
           :modules="[Navigation]"
           @swiper="onSwiper"
-          :slides-per-view="1"
-          :space-between="10"
-          :loop="true"
-          :breakpoints="{
-            320: {
-              slidesPerView: 1.5,
-              spaceBetween: 16,
-            },
-            480: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            640: {
-              slidesPerView: 2.5,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 3.5,
-              spaceBetween: 10,
-            },
-            1024: {
-              slidesPerView: 4.5,
-              spaceBetween: 10,
-            },
-            1280: {
-              slidesPerView: 6,
-              spaceBetween: 10,
-            },
-            1540: {
-              slidesPerView: 6,
-              spaceBetween: 10,
+          :options="{
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            breakpoints: {
+              320: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+              },
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2.5,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 3.5,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 4.5,
+                spaceBetween: 10,
+              },
+              1280: {
+                slidesPerView: 6,
+                spaceBetween: 10,
+              },
+              1540: {
+                slidesPerView: 6,
+                spaceBetween: 10,
+              },
             },
           }"
-          class="bots-swiper"
+          containerClass="bots-swiper"
         >
-          <swiper-slide v-for="bot in bots" :key="bot.id" class="bots-slide">
+          <SwiperSlide v-for="bot in bots" :key="bot.id" class="bots-slide">
             <div
               class="bots-card"
               :class="{ 'bots-card--placeholder': bot.name === 'PersonaPlay Bots' }"
@@ -174,18 +165,18 @@ const bots: BotCard[] = [
                 </div>
               </div>
             </div>
-          </swiper-slide>
-        </swiper>
+          </SwiperSlide>
+        </BaseSwiper>
       </div>
 
       <div class="bots-footer">
         <div class="bots-footer-content">
           <UIButton variant="accent" size="lg" class="explore-btn">Explore All</UIButton>
           <div class="swiper-navigation">
-            <button @click="handlePrev" class="nav-button">
+            <button @click="swiperInstance?.slidePrev()" class="nav-button">
               <img src="/svg/chevron.svg" alt="Previous" class="chevron chevron-left" />
             </button>
-            <button @click="handleNext" class="nav-button">
+            <button @click="swiperInstance?.slideNext()" class="nav-button">
               <img src="/svg/chevron.svg" alt="Next" class="chevron chevron-right" />
             </button>
           </div>
@@ -243,11 +234,11 @@ const bots: BotCard[] = [
 }
 
 .nav-button {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 8px;
   background: white;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 8px rgba(20, 162, 184, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;

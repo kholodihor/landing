@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
+import { SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper/modules'
 import IconQuotes from '@/components/icons/IconQuotes.vue'
-
-// Import Swiper styles
-import 'swiper/css'
+import BaseSwiper from '@/components/shared/BaseSwiper.vue'
 
 interface Testimonial {
   id: number
@@ -45,41 +43,43 @@ const testimonials = ref<Testimonial[]>([
 <template>
   <section class="testimonials">
     <div class="testimonials-container">
-      <swiper
+      <BaseSwiper
         :modules="[Autoplay]"
-        :slides-per-view="1"
-        :space-between="30"
-        :autoplay="{
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
+        :options="{
+          slidesPerView: 1,
+          spaceBetween: 30,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          loop: true,
+          speed: 1500,
+          pagination: {
+            clickable: true,
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3.5,
+              spaceBetween: 40,
+            },
+            1540: {
+              slidesPerView: 4.5,
+              spaceBetween: 40,
+            },
+          },
         }"
-        :loop="true"
-        :speed="1500"
-        :pagination="{
-          clickable: true,
-        }"
-        :breakpoints="{
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3.5,
-            spaceBetween: 40,
-          },
-          1540: {
-            slidesPerView: 4.5,
-            spaceBetween: 40,
-          },
-        }"
-        class="testimonials-swiper"
+        containerClass="testimonials-swiper"
       >
-        <swiper-slide
+        <SwiperSlide
           v-for="testimonial in testimonials"
           :key="testimonial.id"
           class="testimonial-slide"
@@ -94,8 +94,8 @@ const testimonials = ref<Testimonial[]>([
               {{ testimonial.name }}
             </div>
           </div>
-        </swiper-slide>
-      </swiper>
+        </SwiperSlide>
+      </BaseSwiper>
     </div>
   </section>
 </template>
