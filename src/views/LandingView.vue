@@ -2,6 +2,7 @@
 import HeroSection from '@/components/landing/HeroSection.vue'
 import BotCardsSection from '@/components/landing/BotCardsSection.vue'
 import StylesSection from '@/components/landing/StylesSection.vue'
+import ChallengesSection from '@/components/landing/ChallengesSection.vue'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import StylesSection from '@/components/landing/StylesSection.vue'
     <HeroSection />
     <BotCardsSection />
     <StylesSection />
+    <ChallengesSection />
   </main>
 </template>
 
