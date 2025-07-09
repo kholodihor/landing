@@ -97,7 +97,7 @@
 .meter,
 .chart,
 .repertoire {
-  width: 380px;
+  width: 360px;
   height: auto;
   border-radius: 1rem;
 }
