@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import HeroSection from '@/components/landing/HeroSection.vue'
 import BotCardsSection from '@/components/landing/BotCardsSection.vue'
+import StylesSection from '@/components/landing/StylesSection.vue'
 </script>
 
 <template>
   <main>
     <HeroSection />
     <BotCardsSection />
+    <StylesSection />
   </main>
 </template>
 

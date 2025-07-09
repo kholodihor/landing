@@ -20,7 +20,7 @@
   /* ========== Colors: Main ========== */
   --clr-text: #232323;
   --clr-text-grey: #9e9e9e;
-  --clr-background-main: #e5f5fe;
+  --clr-background-main: linear-gradient(to bottom, #f3fdff, #ebfcff);
   --clr-background-detail: #ffffff;
 
   /* ========== Colors: Shades ========== */
@@ -38,10 +38,10 @@
   --clr-premium-yellow: #ffc107;
 
   /* ========== Colors: Background Variants ========== */
-  --clr-linebg-main: #e5f5fe;
+  --clr-linebg-main: linear-gradient(to bottom, #f3fdff, #ebfcff);
   --clr-linebg-alternative: #e8efe6;
   --clr-linebg-caution: #fcd7ca;
-  --clr-bg-lightblue: rgb(225, 248, 255);
+  --clr-bg-lightblue: linear-gradient(to bottom, #f3fdff, #ebfcff);
 
   /* ========== Colors: UI Elements ========== */
   --clr-icons-drop-shadow: hsla(0, 0%, 25%, 0.5);

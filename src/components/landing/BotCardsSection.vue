@@ -188,7 +188,6 @@ const onSwiper = (swiper: any) => {
 
 <style scoped>
 .bots-section {
-  background-color: var(--clr-bg-lightblue);
   padding: 5rem 0;
   position: relative;
   overflow: hidden;
