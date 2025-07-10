@@ -6,6 +6,7 @@ import { Navigation } from 'swiper/modules'
 import BaseSwiper from '@/components/shared/BaseSwiper.vue'
 import UIButton from '@/components/ui/UIButton.vue'
 import AccentedText from '@/components/ui/AccentedText.vue'
+import SliderNavigation from '@/components/ui/SliderNavigation.vue'
 
 interface BotCard {
   id: number
@@ -172,14 +173,13 @@ const onSwiper = (swiper: any) => {
       <div class="bots-footer">
         <div class="bots-footer-content">
           <UIButton variant="accent" size="lg" class="explore-btn">Explore All</UIButton>
-          <div class="swiper-navigation">
-            <button @click="swiperInstance?.slidePrev()" class="nav-button">
-              <img src="/svg/chevron.svg" alt="Previous" class="chevron chevron-left" />
-            </button>
-            <button @click="swiperInstance?.slideNext()" class="nav-button">
-              <img src="/svg/chevron.svg" alt="Next" class="chevron chevron-right" />
-            </button>
-          </div>
+          <SliderNavigation
+            :on-prev="() => swiperInstance?.slidePrev()"
+            :on-next="() => swiperInstance?.slideNext()"
+            :prev-disabled="false"
+            :next-disabled="false"
+            class="swiper-navigation"
+          />
         </div>
       </div>
     </div>
