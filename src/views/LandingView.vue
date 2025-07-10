@@ -4,6 +4,7 @@ import BotCardsSection from '@/components/landing/BotCardsSection.vue'
 import StylesSection from '@/components/landing/StylesSection.vue'
 import ChallengesSection from '@/components/landing/ChallengesSection.vue'
 import PracticePuzzlesSection from '@/components/landing/PracticePuzzlesSection.vue'
+import PlayYourWaySection from '@/components/landing/PlayYourWaySection.vue'
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import PracticePuzzlesSection from '@/components/landing/PracticePuzzlesSection.
     <HeroSection />
     <BotCardsSection />
     <StylesSection />
+    <PlayYourWaySection/>
     <ChallengesSection />
     <PracticePuzzlesSection />
   </main>
