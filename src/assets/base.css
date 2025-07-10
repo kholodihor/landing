@@ -122,3 +122,10 @@ h6 {
   color: var(--color-heading);
   text-align: center;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}

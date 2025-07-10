@@ -21,13 +21,11 @@
             </div>
 
             <ul class="menu-list">
-              <li
-                v-for="(item, index) in practiceMenuItems"
-                :key="`practice-${index}`"
-                class="menu-item"
-              >
-                <span>{{ item }}</span>
-                <img src="/svg/chevron_right.svg" alt="" class="chevron" />
+              <li v-for="(item, index) in practiceMenuItems" :key="`practice-${index}`">
+                <router-link :to="item.link" class="menu-item">
+                  <span>{{ item.name }}</span>
+                  <img src="/svg/chevron_right.svg" alt="" class="chevron" />
+                </router-link>
               </li>
             </ul>
           </div>
@@ -39,8 +37,9 @@
               White to play
             </p>
             <img src="/svg/chessboard_1.svg" alt="Chessboard" class="chessboard" />
-
-            <UIButton icon="/svg/swords.svg" text="Practice Now" class="button" />
+            <router-link to="/practice">
+              <UIButton icon="/svg/swords.svg" text="Practice Now" class="button" />
+            </router-link>
           </div>
         </div>
       </div>
@@ -65,13 +64,11 @@
             </div>
 
             <ul class="menu-list">
-              <li
-                v-for="(item, index) in puzzlesMenuItems"
-                :key="`puzzle-${index}`"
-                class="menu-item"
-              >
-                <span>{{ item }}</span>
-                <img src="/svg/chevron_right.svg" alt="" class="chevron" />
+              <li v-for="(item, index) in puzzlesMenuItems" :key="`puzzle-${index}`">
+                <router-link :to="item.link" class="menu-item">
+                  <span>{{ item.name }}</span>
+                  <img src="/svg/chevron_right.svg" alt="" class="chevron" />
+                </router-link>
               </li>
             </ul>
           </div>
@@ -82,7 +79,9 @@
               White to play
             </p>
             <img src="/svg/chessboard_2.svg" alt="Chessboard" class="chessboard" />
-            <UIButton icon="/svg/swords.svg" text="Solve Puzzles" />
+            <router-link to="/puzzles">
+              <UIButton icon="/svg/swords.svg" text="Solve Puzzles" />
+            </router-link>
           </div>
         </div>
       </div>
@@ -94,11 +93,28 @@
 import AccentedText from '@/components/ui/AccentedText.vue'
 import UIButton from '@/components/ui/UIButton.vue'
 
-const practiceMenuItems = ['Openings', 'Middlegames', 'Endgames', 'Masters', 'Custom challenge']
-const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Advanced']
+// const practiceMenuItems = ['Openings', 'Middlegames', 'Endgames', 'Masters', 'Custom challenge']
+// const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Advanced']
+
+const practiceMenuItems = [
+  { name: 'Openings', link: '/practice/openings' },
+  { name: 'Middlegames', link: '/practice/middlegames' },
+  { name: 'Endgames', link: '/practice/endgames' },
+  { name: 'Masters', link: '/practice/masters' },
+  { name: 'Custom challenge', link: '/practice/custom-challenge' },
+]
+
+const puzzlesMenuItems = [
+  { name: 'Beginner', link: '/puzzles/beginner' },
+  { name: 'Novice', link: '/puzzles/novice' },
+  { name: 'Intermediate', link: '/puzzles/intermediate' },
+  { name: 'Skilled', link: '/puzzles/skilled' },
+  { name: 'Advanced', link: '/puzzles/advanced' },
+]
 </script>
 
 <style scoped>
+/* Layout */
 .practice-puzzles-section {
   padding: 2rem 0;
 }
@@ -109,19 +125,15 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
   padding: 0 1rem;
 }
 
-.button {
-  margin-top: 2rem;
-}
 .section-wrapper {
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  overflow: hidden;
 }
 
 .section-header {
   width: 100%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-title {
@@ -140,6 +152,7 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center;
 }
 
 .content-left {
@@ -147,9 +160,12 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
 }
 
+/* Chessboard */
 .chessboard-container {
+  width: 100%;
   order: 1;
   display: flex;
   justify-content: center;
@@ -157,10 +173,9 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
   flex-direction: column;
   background: #f8f9fa;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0;
   margin: 0 auto;
-  max-width: 300px;
-  width: 100%;
+  max-width: 350px;
 }
 
 .chessboard {
@@ -172,46 +187,14 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
 .chessboard-description {
   text-align: center;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 .chessboard-description strong {
   font-weight: 600;
 }
 
-/* Desktop styles */
-@media (min-width: 1024px) {
-  .practice-puzzles-section {
-    padding: 4rem 0;
-  }
-
-  .section-wrapper {
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .section-content {
-    flex-direction: row;
-    align-items: center;
-    gap: 4rem;
-  }
-
-  .practice-wrapper .section-content {
-    flex-direction: row-reverse;
-  }
-
-  .content-left {
-    flex: 1;
-    order: unset;
-  }
-
-  .chessboard-container {
-    flex: 1;
-    max-width: 400px;
-    order: unset;
-  }
-}
-
+/* Info Card */
 .info-card {
   border-radius: 12px;
   padding: 1.25rem;
@@ -220,6 +203,7 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
   gap: 1rem;
   align-items: center;
   box-shadow: 0 4px 12px rgba(20, 162, 184, 0.3);
+  width: 100%;
 }
 
 .info-text h6 {
@@ -241,42 +225,15 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
   opacity: 0.8;
 }
 
+/* Menu List */
 .menu-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.button-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1.5rem;
-  padding: 0;
   width: 100%;
-  background: pink;
-}
-
-/* Align button under chessboard */
-.practice-wrapper .button-container {
-  justify-content: center;
-  padding-left: 0;
-  padding-right: 50%; /* Push to align under chessboard */
-}
-
-.puzzles-wrapper .button-container {
-  justify-content: center;
-  padding-right: 0;
-  padding-left: 50%; /* Push to align under chessboard */
-}
-
-/* Ensure buttons are properly sized */
-.button-container :deep(.button) {
-  width: 200px; /* Match chessboard width */
 }
 
 .menu-item {
@@ -290,60 +247,58 @@ const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Adva
   transition: all 0.2s ease;
 }
 
-/* .menu-item:hover {
-  border-color: #adb5bd;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-} */
-
 .chevron {
   width: 16px;
   height: 16px;
   opacity: 0.5;
 }
 
-.chessboard-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f8f9fa;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 1rem;
-  align-self: start;
+/* Buttons */
+.button {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 200px;
 }
 
-.chessboard {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .section-wrapper,
-  .practice-wrapper,
-  .puzzles-wrapper {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'header'
-      'chessboard'
-      'content' !important;
-  }
-
-  .chessboard-container {
-    margin: 1rem 0;
-  }
-}
-
-@media (max-width: 640px) {
+/* Desktop styles */
+@media (min-width: 768px) {
   .practice-puzzles-section {
-    padding: 2rem 0;
+    padding: 4rem 0;
   }
 
   .section-wrapper {
-    padding: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
   }
 
+  .section-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .practice-wrapper .section-content {
+    flex-direction: row-reverse;
+  }
+
+  .content-left {
+    flex: 1;
+    order: unset;
+  }
+
+  .chessboard-container {
+    flex: 1;
+    max-width: 400px;
+    order: unset;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 640px) {
   .section-title {
     font-size: 1.25rem;
   }
