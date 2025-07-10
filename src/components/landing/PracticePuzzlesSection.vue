@@ -138,7 +138,7 @@ const puzzlesMenuItems = [
 
 .section-title {
   width: 100%;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   display: flex;
   justify-content: center;

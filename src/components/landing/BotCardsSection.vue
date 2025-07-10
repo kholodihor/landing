@@ -331,6 +331,7 @@ const onSwiper = (swiper: any) => {
   height: 18px;
   object-fit: cover;
   margin-left: 0.2rem;
+  border-radius: 50%;
 }
 
 .bots-card-info {

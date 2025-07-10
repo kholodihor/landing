@@ -195,6 +195,7 @@ const onSwiper = (swiper: any) => {
 
 .challenge-card {
   background: white;
+  padding: 1rem;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
@@ -209,6 +210,7 @@ const onSwiper = (swiper: any) => {
   width: 100%;
   height: 180px;
   min-height: 180px;
+  border-radius: 12px;
   overflow: hidden;
 }
 

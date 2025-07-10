@@ -12,9 +12,9 @@ import PlayYourWaySection from '@/components/landing/PlayYourWaySection.vue'
     <HeroSection />
     <BotCardsSection />
     <StylesSection />
-    <PlayYourWaySection/>
-    <ChallengesSection />
+    <PlayYourWaySection />
     <PracticePuzzlesSection />
+    <ChallengesSection />
   </main>
 </template>
 
