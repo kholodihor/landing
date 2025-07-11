@@ -54,16 +54,30 @@ const features: Feature[] = [
 <style scoped>
 /* Layout */
 .premium-section {
-  background: linear-gradient(to bottom, #ffffff, #ffebc5);
-  padding: 4rem 0;
-  border-top: 15px solid rgba(249, 168, 10, 0.5);
-  border-radius: 8px;
+  padding: 2rem var(--container-padding-desktop);
 }
 
 .container {
-  max-width: 1200px;
+  background: linear-gradient(to bottom, #ffffff, #ffebc5);
+  border-top: 15px solid rgba(249, 168, 10, 0.5);
+  border-radius: 8px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 2rem 1.5rem;
+}
+
+/* Responsive padding */
+@media (max-width: 1024px) {
+  .premium-section {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-section {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
 }
 
 .premium-content {
