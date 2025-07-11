@@ -5,6 +5,7 @@ import StylesSection from '@/components/landing/StylesSection.vue'
 import ChallengesSection from '@/components/landing/ChallengesSection.vue'
 import PracticePuzzlesSection from '@/components/landing/PracticePuzzlesSection.vue'
 import PlayYourWaySection from '@/components/landing/PlayYourWaySection.vue'
+import PremiumSection from '@/components/landing/PremiumSection.vue'
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import PlayYourWaySection from '@/components/landing/PlayYourWaySection.vue'
     <PlayYourWaySection />
     <PracticePuzzlesSection />
     <ChallengesSection />
+    <PremiumSection />
   </main>
 </template>
 
@@ -22,8 +24,6 @@ import PlayYourWaySection from '@/components/landing/PlayYourWaySection.vue'
 main {
   width: 100%;
   min-height: 100vh;
-  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-unit);
 }
 </style>

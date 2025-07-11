@@ -24,7 +24,7 @@
               <li v-for="(item, index) in practiceMenuItems" :key="`practice-${index}`">
                 <router-link :to="item.link" class="menu-item">
                   <span>{{ item.name }}</span>
-                  <img src="/svg/chevron_right.svg" alt="" class="chevron" />
+                  <ChevronIcon color="var(--clr-accent)" class="chevron" />
                 </router-link>
               </li>
             </ul>
@@ -67,7 +67,7 @@
               <li v-for="(item, index) in puzzlesMenuItems" :key="`puzzle-${index}`">
                 <router-link :to="item.link" class="menu-item">
                   <span>{{ item.name }}</span>
-                  <img src="/svg/chevron_right.svg" alt="" class="chevron" />
+                  <ChevronIcon color="var(--clr-accent)" class="chevron" />
                 </router-link>
               </li>
             </ul>
@@ -92,9 +92,7 @@
 <script setup lang="ts">
 import AccentedText from '@/components/ui/AccentedText.vue'
 import UIButton from '@/components/ui/UIButton.vue'
-
-// const practiceMenuItems = ['Openings', 'Middlegames', 'Endgames', 'Masters', 'Custom challenge']
-// const puzzlesMenuItems = ['Beginner', 'Novice', 'Intermediate', 'Skilled', 'Advanced']
+import ChevronIcon from '@/components/ui/ChevronIcon.vue'
 
 const practiceMenuItems = [
   { name: 'Openings', link: '/practice/openings' },
@@ -245,12 +243,19 @@ const puzzlesMenuItems = [
   align-items: center;
   cursor: pointer;
   transition: all 0.2s ease;
-}
+  color: var(--clr-text-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 
-.chevron {
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
+  &:hover {
+    background-color: var(--clr-bg-secondary);
+  }
+
+  .chevron-icon {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* Buttons */

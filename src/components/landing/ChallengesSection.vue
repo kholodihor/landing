@@ -1,4 +1,87 @@
-<!-- eslint-disable @typescript-eslint/no-explicit-any -->
+<template>
+  <section class="challenges-section">
+    <div class="container">
+      <h2 class="section-title">
+        <img src="/svg/prize.svg" alt="Trophy" class="section-icon" />
+        Challenges
+      </h2>
+
+      <div class="swiper-container">
+        <BaseSwiper
+          :modules="[Navigation]"
+          @swiper="onSwiper"
+          :options="{
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            breakpoints: {
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+              },
+              420: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+              },
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2.5,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 3.5,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 4.5,
+                spaceBetween: 10,
+              },
+              1280: {
+                slidesPerView: 5,
+                spaceBetween: 10,
+              },
+              1540: {
+                slidesPerView: 5,
+                spaceBetween: 10,
+              },
+            },
+          }"
+          containerClass="challenges-swiper"
+        >
+          <SwiperSlide v-for="challenge in challenges" :key="challenge.id" class="challenges-slide">
+            <div class="challenge-card">
+              <div class="challenge-card-image">
+                <img :src="challenge.image" :alt="challenge.title" />
+                <span v-if="challenge.isNew" class="new-badge">New</span>
+              </div>
+              <div class="challenge-card-content">
+                <h3 class="challenge-card-title">{{ challenge.title }}</h3>
+                <p class="challenge-card-description">{{ challenge.description }}</p>
+              </div>
+            </div>
+          </SwiperSlide>
+        </BaseSwiper>
+      </div>
+
+      <div class="challenges-footer">
+        <div class="challenges-footer-content">
+          <UIButton variant="accent" size="lg" class="explore-btn">Explore All</UIButton>
+          <SliderNavigation
+            :on-prev="() => swiperInstance?.slidePrev()"
+            :on-next="() => swiperInstance?.slideNext()"
+            :prev-disabled="false"
+            :next-disabled="false"
+            class="swiper-navigation"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import { SwiperSlide } from 'swiper/vue'
@@ -63,86 +146,6 @@ const onSwiper = (swiper: any) => {
 }
 </script>
 
-<template>
-  <section class="challenges-section">
-    <div class="container">
-      <h2 class="section-title">
-        <img src="/svg/prize.svg" alt="Trophy" class="section-icon" />
-        Challenges
-      </h2>
-
-      <div class="swiper-container">
-        <BaseSwiper
-          :modules="[Navigation]"
-          @swiper="onSwiper"
-          :options="{
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            breakpoints: {
-              320: {
-                slidesPerView: 1.5,
-                spaceBetween: 16,
-              },
-              480: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              640: {
-                slidesPerView: 2.5,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 3.5,
-                spaceBetween: 10,
-              },
-              1024: {
-                slidesPerView: 4.5,
-                spaceBetween: 10,
-              },
-              1280: {
-                slidesPerView: 5,
-                spaceBetween: 10,
-              },
-              1540: {
-                slidesPerView: 5,
-                spaceBetween: 10,
-              },
-            },
-          }"
-          containerClass="challenges-swiper"
-        >
-          <SwiperSlide v-for="challenge in challenges" :key="challenge.id" class="challenges-slide">
-            <div class="challenge-card">
-              <div class="challenge-card-image">
-                <img :src="challenge.image" :alt="challenge.title" />
-                <span v-if="challenge.isNew" class="new-badge">New</span>
-              </div>
-              <div class="challenge-card-content">
-                <h3 class="challenge-card-title">{{ challenge.title }}</h3>
-                <p class="challenge-card-description">{{ challenge.description }}</p>
-              </div>
-            </div>
-          </SwiperSlide>
-        </BaseSwiper>
-      </div>
-
-      <div class="challenges-footer">
-        <div class="challenges-footer-content">
-          <UIButton variant="accent" size="lg" class="explore-btn">Explore All</UIButton>
-          <SliderNavigation
-            :on-prev="() => swiperInstance?.slidePrev()"
-            :on-next="() => swiperInstance?.slideNext()"
-            :prev-disabled="false"
-            :next-disabled="false"
-            class="swiper-navigation"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
-
 <style scoped>
 /* Section */
 .challenges-section {
@@ -171,8 +174,8 @@ const onSwiper = (swiper: any) => {
 }
 
 .section-icon {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 /* Swiper Container */

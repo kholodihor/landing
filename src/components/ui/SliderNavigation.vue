@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ChevronIcon from './ChevronIcon.vue'
+
 interface Props {
   onPrev: () => void
   onNext: () => void
@@ -18,7 +20,7 @@ defineProps<Props>()
       :disabled="prevDisabled"
       aria-label="Previous slide"
     >
-      <img src="/svg/chevron.svg" alt="Previous" class="chevron chevron-left" />
+      <ChevronIcon direction="left" color="var(--clr-accent)" />
     </button>
     <button 
       @click="onNext" 
@@ -26,7 +28,7 @@ defineProps<Props>()
       :disabled="nextDisabled"
       aria-label="Next slide"
     >
-      <img src="/svg/chevron.svg" alt="Next" class="chevron chevron-right" />
+      <ChevronIcon direction="right" color="var(--clr-accent)" />
     </button>
   </div>
 </template>
@@ -58,13 +60,18 @@ defineProps<Props>()
   cursor: not-allowed;
 }
 
-.chevron {
-  width: 20px;
-  height: 20px;
+.chevron-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
 }
 
-.chevron-right {
-  transform: rotate(180deg);
+.nav-button:hover:not(:disabled) .chevron-icon {
+  transform: translateX(var(--hover-translate, 2px));
+}
+
+.nav-button:hover:not(:disabled) .chevron-icon[direction="right"] {
+  --hover-translate: -2px;
 }
 
 @media (max-width: 479px), (min-width: 1280px) {
