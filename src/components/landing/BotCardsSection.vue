@@ -1,93 +1,3 @@
-<!-- eslint-disable @typescript-eslint/no-explicit-any -->
-<script setup lang="ts">
-import { ref } from 'vue'
-import { SwiperSlide } from 'swiper/vue'
-import { Navigation } from 'swiper/modules'
-import BaseSwiper from '@/components/shared/BaseSwiper.vue'
-import UIButton from '@/components/ui/UIButton.vue'
-import AccentedText from '@/components/ui/AccentedText.vue'
-import SliderNavigation from '@/components/ui/SliderNavigation.vue'
-
-interface BotCard {
-  id: number
-  name: string
-  rating: number
-  country: string
-  age: number
-  profession: string
-  image: string
-  isPremium?: boolean
-}
-
-const bots: BotCard[] = [
-  {
-    id: 1,
-    name: 'Paeonia Castling',
-    rating: 1645,
-    country: 'HT',
-    age: 78,
-    profession: 'Herbalist',
-    image: '/img/bots/bot1.png',
-  },
-  {
-    id: 2,
-    name: 'Cookie',
-    rating: 1847,
-    country: 'FR',
-    age: 32,
-    profession: 'Patisserie Chef Apprentice',
-    image: '/img/bots/bot2.png',
-    isPremium: true,
-  },
-  {
-    id: 3,
-    name: 'Olaf Iceberg',
-    rating: 773,
-    country: 'NO',
-    age: 45,
-    profession: 'Glaciologist',
-    image: '/img/bots/bot3.png',
-  },
-  {
-    id: 4,
-    name: 'Ethan Snide',
-    rating: 783,
-    country: 'CA',
-    age: 28,
-    profession: 'Obnoxious kid',
-    image: '/img/bots/bot4.png',
-  },
-  {
-    id: 5,
-    name: 'Hana Biisho',
-    rating: 1931,
-    country: 'CN',
-    age: 36,
-    profession: 'Journalist',
-    image: '/img/bots/bot5.png',
-    isPremium: true,
-  },
-  {
-    id: 6,
-    name: '',
-    rating: 0,
-    country: '',
-    age: 0,
-    profession: '500+',
-    image: '/img/bots/bot_placeholder.png',
-    isPremium: false,
-  },
-]
-
-// Reference to the Swiper instance for navigation controls
-const swiperInstance = ref<any | null>(null)
-
-// Get the Swiper instance when it's initialized
-const onSwiper = (swiper: any) => {
-  swiperInstance.value = swiper
-}
-</script>
-
 <template>
   <section class="bots-section">
     <div class="container">
@@ -185,6 +95,95 @@ const onSwiper = (swiper: any) => {
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { SwiperSlide } from 'swiper/vue'
+import { Navigation } from 'swiper/modules'
+import BaseSwiper from '@/components/shared/BaseSwiper.vue'
+import UIButton from '@/components/ui/UIButton.vue'
+import AccentedText from '@/components/ui/AccentedText.vue'
+import SliderNavigation from '@/components/ui/SliderNavigation.vue'
+
+interface BotCard {
+  id: number
+  name: string
+  rating: number
+  country: string
+  age: number
+  profession: string
+  image: string
+  isPremium?: boolean
+}
+
+const bots: BotCard[] = [
+  {
+    id: 1,
+    name: 'Paeonia Castling',
+    rating: 1645,
+    country: 'HT',
+    age: 78,
+    profession: 'Herbalist',
+    image: '/img/bots/bot1.png',
+  },
+  {
+    id: 2,
+    name: 'Cookie',
+    rating: 1847,
+    country: 'FR',
+    age: 32,
+    profession: 'Patisserie Chef Apprentice',
+    image: '/img/bots/bot2.png',
+    isPremium: true,
+  },
+  {
+    id: 3,
+    name: 'Olaf Iceberg',
+    rating: 773,
+    country: 'NO',
+    age: 45,
+    profession: 'Glaciologist',
+    image: '/img/bots/bot3.png',
+  },
+  {
+    id: 4,
+    name: 'Ethan Snide',
+    rating: 783,
+    country: 'CA',
+    age: 28,
+    profession: 'Obnoxious kid',
+    image: '/img/bots/bot4.png',
+  },
+  {
+    id: 5,
+    name: 'Hana Biisho',
+    rating: 1931,
+    country: 'CN',
+    age: 36,
+    profession: 'Journalist',
+    image: '/img/bots/bot5.png',
+    isPremium: true,
+  },
+  {
+    id: 6,
+    name: '',
+    rating: 0,
+    country: '',
+    age: 0,
+    profession: '500+',
+    image: '/img/bots/bot_placeholder.png',
+    isPremium: false,
+  },
+]
+
+// Reference to the Swiper instance for navigation controls
+const swiperInstance = ref<any | null>(null)
+
+// Get the Swiper instance when it's initialized
+const onSwiper = (swiper: any) => {
+  swiperInstance.value = swiper
+}
+</script>
 
 <style scoped>
 .bots-section {
