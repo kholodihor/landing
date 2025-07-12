@@ -13,7 +13,7 @@
 
           <ul class="feature-list">
             <li v-for="(feature, index) in features" :key="index" class="feature-item">
-              <ChevronIcon color="var(--clr-golden)" />
+              <ChevronIcon color="var(--clr-golden)" class="premium-chevron" />
               <span class="feature-text">
                 <span class="feature-bold">{{ feature.bold }}</span>
                 <span class="feature-regular">{{ feature.regular }}</span>
@@ -110,7 +110,7 @@ const features: Feature[] = [
 
 /* Typography */
 .premium-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 2rem;
@@ -147,6 +147,13 @@ const features: Feature[] = [
   display: inline;
 }
 
+.premium-chevron {
+  min-width: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .feature-bold {
   font-weight: 600;
 }
@@ -173,12 +180,17 @@ const features: Feature[] = [
 
 /* Tablet and below */
 @media (max-width: 1024px) {
+  .premium-section {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+  
   .premium-content {
     gap: 3rem;
   }
 
   .premium-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .premium-image img {
@@ -187,17 +199,23 @@ const features: Feature[] = [
 }
 
 /* Small tablets and below */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .premium-section {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+  
   .premium-content {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
   }
 
   .premium-image {
     flex: 1;
     max-width: 500px;
     padding-right: 0;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
   }
 
   .premium-details {
@@ -213,6 +231,7 @@ const features: Feature[] = [
     width: 100%;
     max-width: 500px;
     text-align: left;
+    justify-content: flex-start;
   }
 
   .premium-button {
@@ -222,31 +241,15 @@ const features: Feature[] = [
 }
 
 /* Mobile */
-@media (max-width: 640px) {
-  .premium-section {
-    padding: 3rem 0;
-  }
-
-  .premium-title {
-    font-size: 2.25rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .feature-item {
-    font-size: 1rem;
-    padding: 0.8rem 1.25rem;
-  }
-
-  .premium-button {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* Small mobile */
 @media (max-width: 480px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+  
   .premium-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
   }
 
   .feature-item {
@@ -255,10 +258,12 @@ const features: Feature[] = [
   }
 
   .premium-button {
+    width: 100%;
+    justify-content: center;
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
-
+  
   .premium-content {
     gap: 2.5rem;
   }

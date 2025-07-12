@@ -6,6 +6,7 @@ import ChallengesSection from '@/components/landing/ChallengesSection.vue'
 import PracticePuzzlesSection from '@/components/landing/PracticePuzzlesSection.vue'
 import PlayYourWaySection from '@/components/landing/PlayYourWaySection.vue'
 import PremiumSection from '@/components/landing/PremiumSection.vue'
+import StartYourJourney from '@/components/landing/StartYourJourney.vue'
 </script>
 
 <template>
@@ -17,6 +18,7 @@ import PremiumSection from '@/components/landing/PremiumSection.vue'
     <PracticePuzzlesSection />
     <ChallengesSection />
     <PremiumSection />
+    <StartYourJourney />
   </main>
 </template>
 
