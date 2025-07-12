@@ -136,7 +136,7 @@ const puzzlesMenuItems = [
 
 .section-title {
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   display: flex;
   justify-content: center;
@@ -302,10 +302,24 @@ const puzzlesMenuItems = [
   }
 }
 
-/* Mobile styles */
-@media (max-width: 640px) {
+/* Tablet styles */
+@media (max-width: 1024px) {
   .section-title {
-    font-size: 1.25rem;
+    font-size: 2.4rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
   }
 
   .info-card {
