@@ -22,6 +22,7 @@
   --clr-text: #232323;
   --clr-text-grey: #9e9e9e;
   --clr-background-main: linear-gradient(to bottom, #f3fdff, #ebfcff);
+  --clr-background-accent: #b5f4ff;
 
   /* ========== Colors: Accent ========== */
   --clr-accent: #14a2b8;
@@ -69,4 +70,8 @@ a {
   color: inherit;
   font-weight: inherit;
   font-size: inherit;
+}
+
+li {
+  list-style: none;
 }

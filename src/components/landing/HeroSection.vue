@@ -139,6 +139,9 @@ import HeroTestimonials from '@/components/landing/HeroTestimonials.vue'
 }
 
 @media (max-width: 768px) {
+  .hero-text h1 {
+    text-align: center;
+  }
   .hero-content {
     padding-left: var(--container-padding-mobile);
     padding-right: var(--container-padding-mobile);
