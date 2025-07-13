@@ -1,45 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { SwiperSlide } from 'swiper/vue'
-import { Autoplay } from 'swiper/modules'
-import IconQuotes from '@/components/icons/IconQuotes.vue'
-import BaseSwiper from '@/components/shared/BaseSwiper.vue'
-
-interface Testimonial {
-  id: number
-  name: string
-  text: string
-}
-
-const testimonials = ref<Testimonial[]>([
-  {
-    id: 1,
-    name: 'Jacob N.',
-    text: "I love how simple it was to choose my level and start a match right away. The bots actually feel like real people, which makes practicing so much more fun. It's a fun way to get into chess at my own pace.",
-  },
-  {
-    id: 2,
-    name: 'Emily R.',
-    text: "I've played games in which I go ahead and want to make a bad fun blunder, no trash talk, just me and a weird cowboy bot named Tim Grant trying to outdo each other. I've never played chess this much. The bots are hilarious and aren't just the right balance.",
-  },
-  {
-    id: 3,
-    name: 'Devika S.',
-    text: 'The online training has missions which feels way more realistic than playing a perfect engine. No robot-like confidence removing just perform exactly against different styles. The fact they play like people makes them so enjoyable.',
-  },
-  {
-    id: 4,
-    name: 'Tomas L.',
-    text: "The daily challenges keep me motivated and the bots give me a chance to practice my openings during breaks. I've become part of the community.",
-  },
-  {
-    id: 5,
-    name: 'Tomas L.',
-    text: "The daily challenges keep me motivated and the bots give me a chance to practice my openings during breaks. I've become part of the community.",
-  },
-])
-</script>
-
 <template>
   <section class="testimonials">
     <div class="testimonials-container">
@@ -99,6 +57,48 @@ const testimonials = ref<Testimonial[]>([
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
+import IconQuotes from '@/components/icons/IconQuotes.vue'
+import BaseSwiper from '@/components/shared/BaseSwiper.vue'
+
+interface Testimonial {
+  id: number
+  name: string
+  text: string
+}
+
+const testimonials = ref<Testimonial[]>([
+  {
+    id: 1,
+    name: 'Jacob N.',
+    text: "I love how simple it was to choose my level and start a match right away. The bots actually feel like real people, which makes practicing so much more fun. It's a fun way to get into chess at my own pace.",
+  },
+  {
+    id: 2,
+    name: 'Emily R.',
+    text: "I've played games in which I go ahead and want to make a bad fun blunder, no trash talk, just me and a weird cowboy bot named Tim Grant trying to outdo each other. I've never played chess this much. The bots are hilarious and aren't just the right balance.",
+  },
+  {
+    id: 3,
+    name: 'Devika S.',
+    text: 'The online training has missions which feels way more realistic than playing a perfect engine. No robot-like confidence removing just perform exactly against different styles. The fact they play like people makes them so enjoyable.',
+  },
+  {
+    id: 4,
+    name: 'Tomas L.',
+    text: "The daily challenges keep me motivated and the bots give me a chance to practice my openings during breaks. I've become part of the community.",
+  },
+  {
+    id: 5,
+    name: 'Tomas L.',
+    text: "The daily challenges keep me motivated and the bots give me a chance to practice my openings during breaks. I've become part of the community.",
+  },
+])
+</script>
 
 <style scoped>
 .testimonials {
