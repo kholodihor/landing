@@ -89,6 +89,7 @@ interface CourseCard {
   description: string
   image: string
   isNew?: boolean,
+  rating: number,
   released: boolean
 }
 
