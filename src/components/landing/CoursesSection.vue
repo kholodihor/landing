@@ -371,4 +371,10 @@ const onSwiper = (swiper: any) => {
     align-items: center;
   }
 }
+
+@media (min-width: 1280px) {
+  .slider-navigation {
+    display: flex;
+  }
+}
 </style>
