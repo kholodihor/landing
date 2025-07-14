@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, withDefaults } from 'vue'
 
-type ButtonVariant = 'accent' | 'dark' | 'premium' | 'outlined'
+type ButtonVariant = 'accent' | 'dark' | 'premium' | 'outlined' | 'outlined-blue'
 
 type ButtonSize = 'sm' | 'md' | 'lg' | 'icon' // 'lg' is default
 
@@ -121,6 +121,12 @@ const buttonClasses = computed(() => [
   color: #333;
 }
 
+.button--outlined-blue {
+  background: #ffffff;
+  border: 1px solid #14A2B8;
+  color: #14A2B8;
+}
+
 /* Hover States */
 .button--accent:hover,
 .button--dark:hover,
@@ -130,6 +136,10 @@ const buttonClasses = computed(() => [
 
 .button--outlined:hover {
   background-color: #fffbf5;
+}
+
+.button--outlined-blue:hover {
+  background-color: #f5f8ff;
 }
 
 /* Sizes */
