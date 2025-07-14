@@ -9,6 +9,7 @@ import PremiumSection from '@/components/landing/PremiumSection.vue'
 import StartYourJourney from '@/components/landing/StartYourJourney.vue'
 import Footer from '@/components/landing/Footer.vue'
 import CoursesSection from '@/components/landing/CoursesSection.vue'
+import FaqSection from '@/components/landing/FaqSection.vue'
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import CoursesSection from '@/components/landing/CoursesSection.vue'
     <ChallengesSection />
     <Courses-section/>
     <PremiumSection />
+    <FaqSection/>
     <StartYourJourney />
     <Footer />
   </main>

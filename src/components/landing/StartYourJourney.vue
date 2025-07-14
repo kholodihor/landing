@@ -71,7 +71,7 @@ import ChevronIcon from '@/components/ui/ChevronIcon.vue'
 <style scoped>
 /* Layout */
 .journey-section {
-  padding: 5rem var(--container-padding-desktop);
+  padding: 4rem var(--container-padding-desktop);
 }
 
 .container {
