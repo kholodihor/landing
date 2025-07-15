@@ -1,7 +1,21 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import AccentedText from '@/components/ui/AccentedText.vue'
 import UIButton from '@/components/ui/UIButton.vue'
 import HeroTestimonials from '@/components/landing/HeroTestimonials.vue'
+
+const placeholder = ref<HTMLElement | null>(null)
+
+const handleImageLoaded = () => {
+  // Add loaded class to image
+  const img = event?.target as HTMLElement
+  img?.classList.add('loaded')
+
+  // Hide placeholder
+  if (placeholder.value) {
+    placeholder.value.style.opacity = '0'
+  }
+}
 </script>
 
 <template>
@@ -24,7 +38,20 @@ import HeroTestimonials from '@/components/landing/HeroTestimonials.vue'
         </div>
       </div>
       <div class="hero-image">
-        <img src="/img/hero/hero_image.svg" alt="Chess player" />
+        <div class="image-wrapper">
+          <!-- Loading placeholder/skeleton -->
+          <div class="image-placeholder" ref="placeholder"></div>
+          <!-- SVG with optimized loading -->
+          <img
+            src="/img/hero/hero_image.svg"
+            alt="Chess player"
+            loading="lazy"
+            width="800"
+            height="600"
+            class="hero-img"
+            @load="handleImageLoaded"
+          />
+        </div>
       </div>
     </div>
     <HeroTestimonials />
@@ -99,13 +126,37 @@ import HeroTestimonials from '@/components/landing/HeroTestimonials.vue'
   justify-content: center;
   align-items: center;
   width: 50%;
-  /* min-width: 400px; */
 }
 
-.hero-image img {
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-background-main);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.hero-img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-img.loaded {
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {

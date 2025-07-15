@@ -169,7 +169,6 @@ const puzzlesMenuItems = [
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #f8f9fa;
   border-radius: 12px;
   padding: 0;
   margin: 0 auto;
