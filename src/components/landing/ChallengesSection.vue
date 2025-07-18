@@ -225,14 +225,14 @@ const onSwiper = (swiper: any) => {
 
 .new-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 0;
+  left: 0;
   background: var(--clr-accent);
   color: white;
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  padding: 0.25rem 1rem;
+  /* border-radius: 12px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
