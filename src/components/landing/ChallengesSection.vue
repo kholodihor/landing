@@ -32,11 +32,11 @@
                 spaceBetween: 10,
               },
               768: {
-                slidesPerView: 3.5,
+                slidesPerView: 3,
                 spaceBetween: 10,
               },
               1024: {
-                slidesPerView: 4.5,
+                slidesPerView: 4,
                 spaceBetween: 10,
               },
               1280: {
@@ -205,7 +205,6 @@ const onSwiper = (swiper: any) => {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
 }
 
 .challenge-card-image {
@@ -238,7 +237,7 @@ const onSwiper = (swiper: any) => {
 }
 
 .challenge-card-content {
-  padding: 1.25rem;
+  /* padding: 1.25rem; */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -283,13 +282,13 @@ const onSwiper = (swiper: any) => {
 }
 
 /* Responsive */
-@media (min-width: 480px) and (max-width: 1279px) {
+@media (min-width: 350px) {
   .swiper-navigation {
     display: flex;
   }
 }
 
-@media (max-width: 479px), (min-width: 1280px) {
+@media (min-width: 1280px) {
   .swiper-navigation {
     display: none;
   }

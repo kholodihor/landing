@@ -231,36 +231,6 @@ const onSwiper = (swiper: any) => {
   gap: 0.75rem;
 }
 
-.nav-button {
-  width: 42px;
-  height: 42px;
-  border-radius: 8px;
-  background: white;
-  box-shadow: 0px 2px 8px rgba(20, 162, 184, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-
-.chevron {
-  width: 20px;
-  height: 20px;
-}
-
-.chevron-right {
-  transform: rotate(180deg);
-}
-
-.nav-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .bots-swiper {
   padding: 1rem 0.5rem 3rem;
   width: 100%;
@@ -365,13 +335,13 @@ const onSwiper = (swiper: any) => {
   white-space: nowrap;
 }
 
-@media (min-width: 480px) and (max-width: 1279px) {
+@media (max-width: 1279px) {
   .swiper-navigation {
     display: flex;
   }
 }
 
-@media (max-width: 479px), (min-width: 1280px) {
+@media (min-width: 1280px) {
   .swiper-navigation {
     display: none;
   }
