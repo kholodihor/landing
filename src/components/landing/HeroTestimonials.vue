@@ -75,27 +75,37 @@ const testimonials = ref<Testimonial[]>([
   {
     id: 1,
     name: 'Jacob N.',
-    text: "I love how simple it was to choose my level and start a match right away. The bots actually feel like real people, which makes practicing so much more fun. It's a fun way to get into chess at my own pace.",
+    text: 'I love how easy it is to pick my level and jump into a game. The bots play like real people, which makes practice actually fun. It’s a great way to get into chess at my own pace.',
   },
   {
     id: 2,
     name: 'Emily R.',
-    text: "I've played games in which I go ahead and want to make a bad fun blunder, no trash talk, just me and a weird cowboy bot named Tim Grant trying to outdo each other. I've never played chess this much. The bots are hilarious and aren't just the right balance.",
+    text: "Sometimes I just want to make a wild blunder and see what happens—no pressure, no trash talk. Just me and a cowboy bot named Tim Grant trying to outplay each other. It's the most fun I’ve ever had with chess.",
   },
   {
     id: 3,
     name: 'Devika S.',
-    text: 'The online training has missions which feels way more realistic than playing a perfect engine. No robot-like confidence removing just perform exactly against different styles. The fact they play like people makes them so enjoyable.',
+    text: "The missions feel much more human than playing a perfect engine. There’s no robotic perfection—just opponents with real quirks and styles. It actually feels like you're learning how to beat real players.",
   },
   {
     id: 4,
     name: 'Tomas L.',
-    text: "The daily challenges keep me motivated and the bots give me a chance to practice my openings during breaks. I've become part of the community.",
+    text: 'The daily challenges keep me coming back, and the bots are perfect for practicing openings during my lunch break. I genuinely feel like part of a community.',
   },
   {
     id: 5,
-    name: 'Tomas L.',
-    text: "The daily challenges keep me motivated and the bots give me a chance to practice my openings during breaks. I've become part of the community.",
+    name: 'Layla M.',
+    text: 'The variety of bot personalities is amazing. Some play aggressive, some slow and sneaky—it’s never boring. It’s helped me prepare for real opponents without the stress.',
+  },
+  {
+    id: 6,
+    name: 'Carlos G.',
+    text: 'I’ve improved so much without even realizing it. At first, I just wanted a casual way to play, but these bots really challenge you if you let them. Super addictive.',
+  },
+  {
+    id: 7,
+    name: 'Sophie K.',
+    text: 'I used to be nervous playing online, but the bots gave me a safe space to grow my confidence. Now I’m taking on real players—and winning more often than not!',
   },
 ])
 </script>
